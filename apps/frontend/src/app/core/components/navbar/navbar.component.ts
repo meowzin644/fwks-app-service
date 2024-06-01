@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { ButtonModule } from 'primeng/button';
 import { ToolbarModule } from 'primeng/toolbar';
+import { NavbarNotificationsComponent } from '../navbar-notifications/navbar-notifications.component';
 
 @Component({
   selector: 'fwks-navbar',
   standalone: true,
   imports: [
-    ToolbarModule
+    ToolbarModule,
+    NavbarNotificationsComponent,
   ],
   templateUrl: './navbar.component.html',
   styles: ``

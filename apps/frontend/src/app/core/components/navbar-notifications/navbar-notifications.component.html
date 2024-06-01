@@ -1,0 +1,23 @@
+<span pRipple (click)="isOpen = true">
+    <i pBadge [value]="model.unread" class="text-xl cursor-pointer pi pi-bell"></i>
+</span>
+
+<p-sidebar position="right" [(visible)]="isOpen" styleClass="w-96" (onHide)="markAllAsRead()">
+
+    <ng-template pTemplate="header">
+        <h3 class="text-2xl font-bold">Notification Center</h3>
+    </ng-template>
+
+    <ng-template pTemplate="content">
+        @for (notification of model.notifications; track $index) {
+            <section class="flex items-center w-full gap-2 p-2 my-1 rounded-md" [class]="notification.read ? '' : 'bg-blue-50'">
+                <p-avatar [image]="notification.image" size="large" shape="circle" />
+                <span class="grid items-center">
+                    <span class="font-bold text-end"><small>{{ notification.date }}</small></span>
+                    <span class="text-justify">{{ notification.content }}</span>
+                </span>
+            </section>
+        }
+    </ng-template>
+
+</p-sidebar>

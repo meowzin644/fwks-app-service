@@ -3,6 +3,7 @@ import { provideRouter } from '@angular/router';
 import { provideAnimations } from '@angular/platform-browser/animations'
 import { provideHttpClient } from '@angular/common/http';
 import { provideAppSettings } from '@fwks/providers';
+import './core/configuration'
 
 import { routes } from './app.routes';
 
