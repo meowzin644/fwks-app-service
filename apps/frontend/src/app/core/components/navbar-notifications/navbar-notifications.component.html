@@ -1,6 +1,4 @@
-<span pRipple (click)="isOpen = true">
-    <i pBadge [value]="model.unread" class="text-xl cursor-pointer pi pi-bell"></i>
-</span>
+<i pBadge (click)="isOpen = true" [value]="unread()" [badgeDisabled]="unread() === 0" class="text-xl cursor-pointer pi pi-bell"></i>
 
 <p-sidebar position="right" [(visible)]="isOpen" styleClass="w-96" (onHide)="markAllAsRead()">
 
@@ -9,13 +7,19 @@
     </ng-template>
 
     <ng-template pTemplate="content">
-        @for (notification of model.notifications; track $index) {
-            <section class="flex items-center w-full gap-2 p-2 my-1 rounded-md" [class]="notification.read ? '' : 'bg-blue-50'">
-                <p-avatar [image]="notification.image" size="large" shape="circle" />
-                <span class="grid items-center">
-                    <span class="font-bold text-end"><small>{{ notification.date }}</small></span>
-                    <span class="text-justify">{{ notification.content }}</span>
-                </span>
+        @if(notifications().length > 0) {
+            @for (notification of notifications(); track $index) {
+                <section class="flex items-center w-full gap-2 p-2 my-1 rounded-md" [class]="notification.read ? '' : 'bg-blue-50'">
+                    <p-avatar [image]="notification.image" size="large" shape="circle" />
+                    <span class="grid items-center">
+                        <span class="font-bold text-end"><small>{{ notification.date }}</small></span>
+                        <span class="text-justify">{{ notification.content }}</span>
+                    </span>
+                </section>
+            }
+        } @else {
+            <section class="flex justify-center">
+                All up to date. Nothing to see here.
             </section>
         }
     </ng-template>

@@ -1,10 +1,8 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, Signal, WritableSignal, inject, signal } from '@angular/core';
 import { BadgeModule } from 'primeng/badge';
-import { ButtonModule } from 'primeng/button';
-import { RippleModule } from 'primeng/ripple';
 import { SidebarModule } from 'primeng/sidebar';
 import { AvatarModule } from 'primeng/avatar';
-import { NotificationCenter } from '@fwks/models'
+import { Notification } from '@fwks/models'
 import { NotificationApiService } from '@fwks/services';
 
 
@@ -13,9 +11,7 @@ import { NotificationApiService } from '@fwks/services';
   standalone: true,
   imports: [
     BadgeModule,
-    RippleModule,
     SidebarModule,
-    ButtonModule,
     AvatarModule,
   ],
   templateUrl: './navbar-notifications.component.html',
@@ -26,17 +22,21 @@ export class NavbarNotificationsComponent implements OnInit {
   api = inject(NotificationApiService)
 
   isOpen = false
-  model: NotificationCenter = { unread: 0, notifications: [] }
+  unread = signal(0)
+  notifications: WritableSignal<Notification[]> = signal([])
 
   ngOnInit(): void {
-    this.api.fetchAll().then(response => this.model = response)
+    this.api.fetchAll().then(response => {
+      this.unread.set(response.unread)
+      this.notifications.set(response.notifications)
+    })
   }
 
   markAllAsRead(): void {
     this.api.markAllAsRead().then(() => {
-      this.model.unread = 0
-      this.model.notifications.forEach(x => x.read = true)
+      this.unread.set(0)
+      this.notifications.update(notifications =>
+        notifications.map(notification => ({ ...notification, read: true })))
     })
   }
-
 }
