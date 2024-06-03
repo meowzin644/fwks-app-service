@@ -1,5 +1,5 @@
-import { APP_INITIALIZER, Provider } from "@angular/core";
-import { AppSettingsService } from "@fwks/services";
+import { APP_INITIALIZER, Provider } from '@angular/core'
+import { AppSettingsService } from '@fwks/services'
 
 export const provideAppSettings = (): Provider => {
     return {

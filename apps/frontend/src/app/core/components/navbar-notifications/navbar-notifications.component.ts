@@ -1,9 +1,9 @@
-import { Component, OnInit, Signal, WritableSignal, inject, signal } from '@angular/core';
-import { BadgeModule } from 'primeng/badge';
-import { SidebarModule } from 'primeng/sidebar';
-import { AvatarModule } from 'primeng/avatar';
+import { Component, OnInit, WritableSignal, inject, signal } from '@angular/core'
+import { BadgeModule } from 'primeng/badge'
+import { SidebarModule } from 'primeng/sidebar'
+import { AvatarModule } from 'primeng/avatar'
 import { Notification } from '@fwks/models'
-import { NotificationApiService } from '@fwks/services';
+import { NotificationApiService } from '@fwks/services'
 
 
 @Component({
@@ -15,7 +15,7 @@ import { NotificationApiService } from '@fwks/services';
     AvatarModule,
   ],
   templateUrl: './navbar-notifications.component.html',
-  styles: ``
+  styles: ''
 })
 export class NavbarNotificationsComponent implements OnInit {
 

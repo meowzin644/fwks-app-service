@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
-import { AvatarModule } from 'primeng/avatar';
-import { RippleModule } from 'primeng/ripple';
+import { Component } from '@angular/core'
+import { RippleModule } from 'primeng/ripple'
 
 @Component({
   selector: 'fwks-navbar-profile',
@@ -9,7 +8,7 @@ import { RippleModule } from 'primeng/ripple';
     RippleModule,
   ],
   templateUrl: './navbar-profile.component.html',
-  styles: ``
+  styles: ''
 })
 export class NavbarProfileComponent {
   

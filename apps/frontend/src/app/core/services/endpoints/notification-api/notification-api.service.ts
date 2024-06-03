@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { Notification, NotificationCenter } from '@fwks/models';
+import { Injectable } from '@angular/core'
+import { Notification, NotificationCenter } from '@fwks/models'
 import { faker } from '@faker-js/faker'
 import dayjs from 'dayjs'
 
@@ -12,8 +12,8 @@ export class NotificationApiService {
     return new Promise((resolve) => {
       const notifications: Notification[] = []
       for (let index = 0; index < faker.number.int({ min: 10, max: 30 }); index++) {
-        let from = dayjs(new Date()).subtract(180, 'minute').toDate()
-        let to = new Date()
+        const from = dayjs(new Date()).subtract(180, 'minute').toDate()
+        const to = new Date()
         notifications.push({
           id: faker.string.uuid(),
           image: faker.image.avatar(),

@@ -1,8 +1,8 @@
-import { Component, OnInit, inject } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { AppSettingsService } from '@fwks/services';
-import { NavbarComponent } from '@fwks/components';
-import { PrimeNGConfig } from 'primeng/api';
+import { Component, OnInit, inject } from '@angular/core'
+import { RouterOutlet } from '@angular/router'
+import { AppSettingsService } from '@fwks/services'
+import { NavbarComponent } from '@fwks/components'
+import { PrimeNGConfig } from 'primeng/api'
 
 @Component({
   selector: 'fwks-root',
@@ -16,7 +16,7 @@ import { PrimeNGConfig } from 'primeng/api';
 })
 export class AppComponent implements OnInit {
 
-  title = 'fwks-app-ui';
+  title = 'fwks-app-ui'
 
   appSettings = inject(AppSettingsService)
   primeConfig = inject(PrimeNGConfig)

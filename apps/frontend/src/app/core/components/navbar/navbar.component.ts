@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { ToolbarModule } from 'primeng/toolbar';
-import { NavbarNotificationsComponent } from '../navbar-notifications/navbar-notifications.component';
-import { NavbarProfileComponent } from '../navbar-profile/navbar-profile.component';
+import { Component } from '@angular/core'
+import { ToolbarModule } from 'primeng/toolbar'
+import { NavbarNotificationsComponent } from '../navbar-notifications/navbar-notifications.component'
+import { NavbarProfileComponent } from '../navbar-profile/navbar-profile.component'
 
 @Component({
   selector: 'fwks-navbar',
@@ -12,7 +12,7 @@ import { NavbarProfileComponent } from '../navbar-profile/navbar-profile.compone
     NavbarProfileComponent
   ],
   templateUrl: './navbar.component.html',
-  styles: ``
+  styles: ''
 })
 export class NavbarComponent {
 
