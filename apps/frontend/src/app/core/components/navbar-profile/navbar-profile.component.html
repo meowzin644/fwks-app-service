@@ -1,3 +1,29 @@
-<section pRipple class="flex items-center gap-2 cursor-pointer">
-    <img height="44" [src]="avatar" class="rounded-full" alt="profile user image">
+<section (click)="menu.toggle($event)" pRipple class="flex items-center gap-2 cursor-pointer">
+    <p-avatar [image]="session.current().user.picture.thumbnail" size="large" shape="circle" />
 </section>
+
+<p-menu #menu [model]="items" [popup]="true">
+
+    <ng-template pTemplate="start">
+        <section pRipple class="flex items-center gap-2 py-1 cursor-pointer ms-2 hover:bg-gray-50">
+            <p-avatar [image]="session.current().user.picture.thumbnail" size="large" shape="circle" />
+            <span class="grid">
+                View Profile
+                <span class="text-sm font-bold text-gray-500">{{ session.current().user.name.first }} {{ session.current().user.name.last }}</span>
+            </span>
+        </section>
+    </ng-template>
+
+    <ng-template pTemplate="item" let-item>
+        <a pRipple [routerLink]="item.routerLink" class="flex gap-2 align-items-center p-menuitem-link">
+            <i [class]="item.icon"></i>
+            <span>{{ item.label }}</span>
+        </a> </ng-template>
+
+    <ng-template pTemplate="end">
+        <p-button (click)="this.session.logout()" styleClass="flex justify-center w-full" [text]="true">
+            Logout
+        </p-button>
+    </ng-template>
+
+</p-menu>
