@@ -1,0 +1,24 @@
+<p-button (click)="open()" icon="pi pi-bars" [rounded]="true" [text]="true" severity="contrast" />
+
+<p-sidebar [(visible)]="isOpen" styleClass="w-92" [modal]="true" appendTo="body">
+
+    <ng-template pTemplate="header">
+        <section class="flex items-center gap-2">
+            <img height="48" src="/assets/logos/app.png" alt="logo image">
+            <span class="text-3xl">
+                fwks<span class="font-bold">app</span>
+            </span>
+        </section>
+    </ng-template>
+     
+    <ng-template pTemplate="footer">
+        <span class="flex justify-center">
+            fwks {{ year }}
+        </span>
+    </ng-template>
+
+    <nav class="sidebar-menu" role="navigation">
+        <p-panelMenu [multiple]="false" [model]="menus" />
+    </nav>
+
+</p-sidebar>

@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable, WritableSignal, inject, signal } from '@angular/core';
-import { Session } from '@fwks/models';
-import { firstValueFrom } from 'rxjs';
+import { HttpClient } from '@angular/common/http'
+import { Injectable, WritableSignal, inject, signal } from '@angular/core'
+import { Session } from '@fwks/models'
+import { firstValueFrom } from 'rxjs'
 
 @Injectable({
   providedIn: 'root'

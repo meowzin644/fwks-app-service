@@ -7,10 +7,6 @@ module.exports = {
   corePlugins: {
     preflight: false
   },
-  plugins: [
-    require('tailwindcss'),
-    require('autoprefixer'),
-    require('postcss'),
-  ],
+  plugins: [],
 }
 

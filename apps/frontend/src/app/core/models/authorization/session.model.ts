@@ -1,4 +1,4 @@
-import { UserProfile } from "../account/user-profile.model"
+import { UserProfile } from '../account/user-profile.model'
 
 export interface Session {
     valid: boolean

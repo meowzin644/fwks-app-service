@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core'
 import { RouterOutlet } from '@angular/router'
 import { AppSettingsService } from '@fwks/services'
-import { NavbarComponent } from '@fwks/components'
+import { NavbarComponent, NavbarSidebarComponent } from '@fwks/components'
 import { PrimeNGConfig } from 'primeng/api'
 
 @Component({
@@ -10,6 +10,7 @@ import { PrimeNGConfig } from 'primeng/api'
   imports: [
     RouterOutlet,
     NavbarComponent,
+    NavbarSidebarComponent,
   ],
   templateUrl: './app.component.html',
   styles: [],

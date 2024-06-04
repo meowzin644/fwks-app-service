@@ -5,13 +5,13 @@
 <p-menu #menu [model]="items" [popup]="true">
 
     <ng-template pTemplate="start">
-        <section pRipple class="flex items-center gap-2 py-1 cursor-pointer ms-2 hover:bg-gray-50">
+        <a href="/account/profile" pRipple class="flex items-center gap-2 py-1 text-black no-underline cursor-pointer ms-2 hover:bg-gray-50">
             <p-avatar [image]="session.current().user.picture.thumbnail" size="large" shape="circle" />
             <span class="grid">
                 View Profile
                 <span class="text-sm font-bold text-gray-500">{{ session.current().user.name.first }} {{ session.current().user.name.last }}</span>
             </span>
-        </section>
+        </a>
     </ng-template>
 
     <ng-template pTemplate="item" let-item>
