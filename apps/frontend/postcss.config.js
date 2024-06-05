@@ -1,6 +1,6 @@
-model.exports = {
-    plugins: {
-        tailwindcss: {},
-        autoprefixer: {}
-    }
-}
+// model.exports = {
+//     plugins: {
+//         tailwindcss: {},
+//         autoprefixer: {}
+//     }
+// }

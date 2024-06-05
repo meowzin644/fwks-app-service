@@ -1,17 +1,14 @@
-<section (click)="menu.toggle($event)" pRipple class="flex items-center gap-2 cursor-pointer">
+<section (click)="menu.toggle($event)" (keyup)="menu.toggle($event)" tabindex="0" pRipple class="flex items-center gap-2 cursor-pointer">
     <p-avatar [image]="session.current().user.picture.thumbnail" size="large" shape="circle" />
 </section>
 
-<p-menu #menu [model]="items" [popup]="true">
+<p-menu #menu [model]="settings.current.menus.profile" [popup]="true">
 
     <ng-template pTemplate="start">
-        <a href="/account/profile" pRipple class="flex items-center gap-2 py-1 text-black no-underline cursor-pointer ms-2 hover:bg-gray-50">
-            <p-avatar [image]="session.current().user.picture.thumbnail" size="large" shape="circle" />
-            <span class="grid">
-                View Profile
-                <span class="text-sm font-bold text-gray-500">{{ session.current().user.name.first }} {{ session.current().user.name.last }}</span>
-            </span>
-        </a>
+        <section class="h-full">
+            <fwks-avatar-detail action="router" />
+            <p-divider styleClass="m-1" />
+        </section>
     </ng-template>
 
     <ng-template pTemplate="item" let-item>
@@ -19,11 +16,5 @@
             <i [class]="item.icon"></i>
             <span>{{ item.label }}</span>
         </a> </ng-template>
-
-    <ng-template pTemplate="end">
-        <p-button (click)="this.session.logout()" styleClass="flex justify-center w-full" [text]="true">
-            Logout
-        </p-button>
-    </ng-template>
 
 </p-menu>

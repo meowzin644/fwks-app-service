@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core'
 import { RouterOutlet } from '@angular/router'
 import { AppSettingsService } from '@fwks/services'
-import { NavbarComponent, NavbarSidebarComponent } from '@fwks/components'
+import { NavbarComponent, NavbarSidebarComponent, SidebarMenuComponent } from '@fwks/components'
 import { PrimeNGConfig } from 'primeng/api'
 
 @Component({
@@ -11,6 +11,7 @@ import { PrimeNGConfig } from 'primeng/api'
     RouterOutlet,
     NavbarComponent,
     NavbarSidebarComponent,
+    SidebarMenuComponent,
   ],
   templateUrl: './app.component.html',
   styles: [],
@@ -23,7 +24,7 @@ export class AppComponent implements OnInit {
   primeConfig = inject(PrimeNGConfig)
 
   ngOnInit(): void {
-    this.primeConfig.ripple = true
+    this.primeConfig.ripple = true    
   }
 
 }

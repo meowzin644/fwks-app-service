@@ -1,24 +1,24 @@
-<p-toolbar>
+<header class="fixed top-0 left-0 w-full bg-white shadow-sm">
 
-    <ng-template pTemplate="start">
+    <p-toolbar styleClass="mx-auto bg-white max-w-screen-2xl">
 
-        <section class="flex items-center gap-2">
-            <img height="48" src="/assets/logos/app.png" alt="logo image">
-            <span class="text-3xl">
-                fwks<span class="font-bold">app</span>
-            </span>
-            <fwks-navbar-sidebar />
-        </section>
+        <ng-template pTemplate="start">
+            <section class="flex items-center gap-2">
+                <img height="48" src="/assets/logos/app.png" alt="logo image">
+                <span class="text-3xl">
+                    fwks<span class="font-bold">app</span>
+                </span>
+            </section>
+        </ng-template>
 
-    </ng-template>
+        <ng-template pTemplate="end">
+            <fwks-navbar-sidebar class="block md:hidden" />
+            <nav class="items-center hidden gap-4 md:flex">
+                <fwks-navbar-notifications />
+                <fwks-navbar-profile />
+            </nav>
+        </ng-template>
 
-    <ng-template pTemplate="end">
+    </p-toolbar>
 
-        <section class="flex items-center gap-4">
-            <fwks-navbar-notifications />
-            <fwks-navbar-profile />
-        </section>
-
-    </ng-template>
-
-</p-toolbar>
+</header>

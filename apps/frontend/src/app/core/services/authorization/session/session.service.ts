@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http'
 import { Injectable, WritableSignal, inject, signal } from '@angular/core'
-import { Session } from '@fwks/models'
+import { Session, UserProfile } from '@fwks/models'
 import { firstValueFrom } from 'rxjs'
 
 @Injectable({
@@ -14,7 +14,7 @@ export class SessionService {
 
   async load(): Promise<void> {
     try {
-      const response = await firstValueFrom<any>(this.http.get<any>('https://randomuser.me/api?inc=name,picture'))
+      const response = await firstValueFrom<{ results: UserProfile[] }>(this.http.get<{ results: UserProfile[] }>('https://randomuser.me/api?inc=name,picture'))
       this.current.set({
         valid: true,
         user: response.results[0]

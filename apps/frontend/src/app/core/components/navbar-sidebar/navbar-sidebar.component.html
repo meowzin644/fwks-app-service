@@ -10,15 +10,13 @@
             </span>
         </section>
     </ng-template>
-     
+
     <ng-template pTemplate="footer">
-        <span class="flex justify-center">
-            fwks {{ year }}
-        </span>
+        <fwks-avatar-detail action="menu" [model]="settings.current.menus.profile" />
     </ng-template>
 
     <nav class="sidebar-menu" role="navigation">
-        <p-panelMenu [multiple]="false" [model]="menus" />
+        <p-panelMenu [multiple]="false" [model]="settings.current.menus.navigation" styleClass="text-sm" />
     </nav>
 
 </p-sidebar>

@@ -1,8 +1,10 @@
-import { Component } from '@angular/core'
-import { MenuItem } from 'primeng/api'
+import { Component, inject } from '@angular/core'
 import { ButtonModule } from 'primeng/button'
 import { PanelMenuModule } from 'primeng/panelmenu'
 import { SidebarModule } from 'primeng/sidebar'
+import { AppSettingsService, SessionService } from '@fwks/services'
+import { AvatarDetailComponent } from '@fwks/components'
+import { DividerModule } from 'primeng/divider'
 
 @Component({
   selector: 'fwks-navbar-sidebar',
@@ -11,67 +13,20 @@ import { SidebarModule } from 'primeng/sidebar'
     ButtonModule,
     SidebarModule,
     PanelMenuModule,
+    DividerModule,
+    AvatarDetailComponent
   ],
   templateUrl: './navbar-sidebar.component.html',
   styleUrl: './navbar-sidebar.component.scss'
 })
 export class NavbarSidebarComponent {
 
+  session = inject(SessionService)
+  settings = inject(AppSettingsService)
+
   isOpen = false
-  year = new Date().getFullYear()
-  menus: MenuItem[] = this.load()
 
   open(): void {
     this.isOpen = true
-  }
-
-  private load(): MenuItem[] {
-    return [
-      {
-        label: 'Dashboard',
-        icon: 'pi pi-objects-column',
-        routerLink: ['/dashboard'],
-      },
-      {
-        label: 'Management',
-        icon: 'pi pi-cog',
-        expanded: false,
-        items: [
-          {
-            label: 'Users',
-            icon: 'pi pi-user',
-            routerLink: ['/users'],
-          },
-          {
-            label: 'Orders',
-            icon: 'pi pi-box',
-            routerLink: ['/orders']
-          }
-        ]
-      },
-      {
-        label: 'Reports',
-        icon: 'pi pi-book',
-        expanded: false,
-        items: [
-          {
-            label: 'Earnings',
-            icon: 'pi pi-arrow-up-right',
-            routerLink: ['/reports'],
-            queryParams: {
-              t: 'earnings'
-            }
-          },
-          {
-            label: 'Expenses',
-            icon: 'pi pi-arrow-down-left',
-            routerLink: ['/reports'],
-            queryParams: {
-              t: 'expenses'
-            }
-          }
-        ]
-      }
-    ]
   }
 }

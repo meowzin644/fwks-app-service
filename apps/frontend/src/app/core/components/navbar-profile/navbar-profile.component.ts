@@ -1,11 +1,11 @@
 import { Component, inject } from '@angular/core'
 import { RippleModule } from 'primeng/ripple'
-import { SessionService } from '@fwks/services'
+import { AppSettingsService, SessionService } from '@fwks/services'
 import { MenuModule } from 'primeng/menu'
-import { MenuItem } from 'primeng/api'
-import { BadgeModule } from 'primeng/badge'
-import { ButtonModule } from 'primeng/button'
 import { AvatarModule } from 'primeng/avatar'
+import { AvatarDetailComponent } from '@fwks/components'
+import { ButtonModule } from 'primeng/button'
+import { DividerModule } from 'primeng/divider'
 
 @Component({
   selector: 'fwks-navbar-profile',
@@ -13,9 +13,10 @@ import { AvatarModule } from 'primeng/avatar'
   imports: [
     RippleModule,
     AvatarModule,
-    MenuModule,
     ButtonModule,
-    BadgeModule,
+    MenuModule,
+    DividerModule,
+    AvatarDetailComponent
   ],
   templateUrl: './navbar-profile.component.html',
   styles: ''
@@ -23,15 +24,6 @@ import { AvatarModule } from 'primeng/avatar'
 export class NavbarProfileComponent {
 
   session = inject(SessionService)
-
-  items = this.build()
-
-  private build(): MenuItem[] {
-    return [
-      { separator: true },
-      { label: 'Settings', icon: 'pi pi-cog', routerLink: 'account/settings' },
-      { separator: true },
-    ]
-  }
+  settings = inject(AppSettingsService)
 
 }

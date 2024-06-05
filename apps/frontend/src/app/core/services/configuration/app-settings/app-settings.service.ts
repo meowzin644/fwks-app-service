@@ -15,9 +15,71 @@ export class AppSettingsService {
     try {
       const settings = await firstValueFrom(this.http.get<AppSettings>('/assets/configuration/appsettings.json'))
       this.current = settings
+      this.loadMenus()
     } catch (error) {
       console.error('Error loading settings', error)
       throw error
+    }
+  }
+
+  private loadMenus(): void {
+    this.current.menus = {
+      profile: [
+        { label: 'Settings', icon: 'pi pi-cog', routerLink: 'account/settings' },
+        { separator: true },
+        { label: 'Settings', icon: 'pi pi-sign-out', routerLink: 'account/logout' },
+      ],
+      navigation: [
+        {
+          label: 'Main',
+          expanded: true,
+          items: [
+            {
+              label: 'Dashboards',
+              icon: 'pi pi-objects-column',
+              routerLink: ['/dashboard'],
+            }
+          ]
+        },
+        {
+          label: 'Management',
+          expanded: false,
+          items: [
+            {
+              label: 'Users',
+              icon: 'pi pi-user',
+              routerLink: ['/users'],
+            },
+            {
+              label: 'Orders',
+              icon: 'pi pi-box',
+              routerLink: ['/orders']
+            }
+          ]
+        },
+        {
+          label: 'Reports',
+          expanded: false,
+          items: [
+            {
+              label: 'Earnings',
+              icon: 'pi pi-arrow-up-right',
+              routerLink: ['/reports'],
+              queryParams: {
+                t: 'earnings'
+              }
+            },
+            {
+              label: 'Expenses',
+              icon: 'pi pi-arrow-down-left',
+              routerLink: ['/reports'],
+              queryParams: {
+                t: 'expenses'
+              }
+            }
+          ]
+        }
+      ],
     }
   }
 
