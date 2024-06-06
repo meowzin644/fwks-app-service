@@ -37,7 +37,7 @@ export class AppSettingsService {
             {
               label: 'Dashboards',
               icon: 'pi pi-objects-column',
-              routerLink: ['/dashboard'],
+              routerLink: ['/dashboards'],
             }
           ]
         },
