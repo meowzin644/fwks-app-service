@@ -1,14 +1,12 @@
 <section class="w-full">
-    
     <div (click)="doAction($event, menu)" (keyup)="doAction($event, menu)" tabindex="0" pRipple
         class="flex items-center justify-center flex-grow w-full gap-2 text-black no-underline cursor-pointer hover:bg-gray-50">
         <p-avatar [image]="session.current().user.picture.thumbnail" size="large" shape="circle" />
         <span class="grid">
-            <span>View Profile</span>
             <span class="text-sm font-bold text-gray-500">{{ session.current().user.name.first }} {{
                 session.current().user.name.last }}</span>
         </span>
     </div>
 </section>
 
-<p-menu #menu [popup]="true" [model]="model"></p-menu>
+<p-menu #menu [popup]="true" [model]="settings.current.menus.profile" />

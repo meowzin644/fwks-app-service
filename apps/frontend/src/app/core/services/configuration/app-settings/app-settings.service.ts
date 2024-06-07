@@ -13,8 +13,7 @@ export class AppSettingsService {
 
   async load(): Promise<void> {
     try {
-      const settings = await firstValueFrom(this.http.get<AppSettings>('/assets/configuration/appsettings.json'))
-      this.current = settings
+      this.current = await firstValueFrom(this.http.get<AppSettings>('/assets/configuration/appsettings.json'))
       this.loadMenus()
     } catch (error) {
       console.error('Error loading settings', error)
@@ -25,9 +24,10 @@ export class AppSettingsService {
   private loadMenus(): void {
     this.current.menus = {
       profile: [
+        { label: 'Profile', icon: 'pi pi-user', routerLink: 'account/profile' },
         { label: 'Settings', icon: 'pi pi-cog', routerLink: 'account/settings' },
         { separator: true },
-        { label: 'Settings', icon: 'pi pi-sign-out', routerLink: 'account/logout' },
+        { label: 'Logout', icon: 'pi pi-sign-out', routerLink: 'account/logout' },
       ],
       navigation: [
         {

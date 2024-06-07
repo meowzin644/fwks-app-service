@@ -1,8 +1,6 @@
-export { AvatarDetailComponent } from './avatar-detail/avatar-detail.component'
+// module components
+export { NavbarModule } from './navbar/navbar.module'
 
-export { NavbarComponent } from './navbar/navbar.component'
-export { NavbarProfileComponent } from './navbar-profile/navbar-profile.component'
-export { NavbarSidebarComponent } from './navbar-sidebar/navbar-sidebar.component'
-export { NavbarNotificationsComponent } from './navbar-notifications/navbar-notifications.component'
-
-export { SidebarMenuComponent } from './sidebar-menu/sidebar-menu.component'
+// components
+export { MainComponent } from './main/main.component'
+export { BlankPageComponent } from './blank-page/blank-page.component'

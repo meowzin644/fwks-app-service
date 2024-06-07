@@ -1,25 +1,25 @@
 import { Component, inject } from '@angular/core'
+import { AppSettingsService, SessionService } from '@fwks/services'
 import { ButtonModule } from 'primeng/button'
 import { PanelMenuModule } from 'primeng/panelmenu'
 import { SidebarModule } from 'primeng/sidebar'
-import { AppSettingsService, SessionService } from '@fwks/services'
-import { AvatarDetailComponent } from '@fwks/components'
+import { NavbarProfileComponent } from '../navbar-profile/navbar-profile.component'
 import { DividerModule } from 'primeng/divider'
 
 @Component({
-  selector: 'fwks-navbar-sidebar',
+  selector: 'fwks-navbar-sidenav',
   standalone: true,
   imports: [
     ButtonModule,
     SidebarModule,
     PanelMenuModule,
     DividerModule,
-    AvatarDetailComponent
+    NavbarProfileComponent
   ],
-  templateUrl: './navbar-sidebar.component.html',
-  styleUrl: './navbar-sidebar.component.scss'
+  templateUrl: './navbar-sidenav.component.html',
+  styleUrl: './navbar-sidenav.component.scss'
 })
-export class NavbarSidebarComponent {
+export class NavbarSidenavComponent {
 
   session = inject(SessionService)
   settings = inject(AppSettingsService)
@@ -29,4 +29,5 @@ export class NavbarSidebarComponent {
   open(): void {
     this.isOpen = true
   }
+
 }

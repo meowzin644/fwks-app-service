@@ -1,16 +1,19 @@
 ::ng-deep {
-    .sidemenu {
+    .navbar-sidenav {
         .p-panelmenu-panel {
-            @apply shadow-none;
-            margin: 0;
+            @apply border-gray-300 border-solid shadow-none;
+            margin: 1rem;
             border-width: 1px;
         }
+
         .p-panelmenu-header-action {
             padding: 1rem;
         }
+
         .p-panelmenu-content {
             padding: 0;
         }
+
         .p-icon-wrapper {
             order: 1;
             margin-inline-start: auto;

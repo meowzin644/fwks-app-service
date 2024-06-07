@@ -1,4 +1,4 @@
-<p-button (click)="open()" icon="pi pi-bars" [rounded]="true" [text]="true" severity="contrast" />
+<p-button (click)="open()" icon="pi pi-bars" [rounded]="true" [text]="true" severity="contrast" class="block md:hidden" />
 
 <p-sidebar [(visible)]="isOpen" styleClass="w-92" [modal]="true" appendTo="body">
 
@@ -12,10 +12,11 @@
     </ng-template>
 
     <ng-template pTemplate="footer">
-        <fwks-avatar-detail action="menu" [model]="settings.current.menus.profile" />
+        <p-divider styleClass="mb-3" />
+        <fwks-navbar-profile action="menu" />
     </ng-template>
 
-    <nav class="sidebar-menu" role="navigation">
+    <nav class="navbar-sidenav" role="navigation">
         <p-panelMenu [multiple]="false" [model]="settings.current.menus.navigation" styleClass="text-sm" />
     </nav>
 

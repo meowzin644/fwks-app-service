@@ -1,30 +1,24 @@
 import { Component, OnInit, inject } from '@angular/core'
 import { RouterOutlet } from '@angular/router'
-import { AppSettingsService } from '@fwks/services'
-import { NavbarComponent, NavbarSidebarComponent, SidebarMenuComponent } from '@fwks/components'
 import { PrimeNGConfig } from 'primeng/api'
+import { MainComponent, NavbarModule } from '@fwks/components'
 
 @Component({
   selector: 'fwks-root',
   standalone: true,
   imports: [
     RouterOutlet,
-    NavbarComponent,
-    NavbarSidebarComponent,
-    SidebarMenuComponent,
+    NavbarModule,
+    MainComponent
   ],
   templateUrl: './app.component.html',
-  styles: [],
+  styles: ''
 })
 export class AppComponent implements OnInit {
 
-  title = 'fwks-app-ui'
-
-  appSettings = inject(AppSettingsService)
   primeConfig = inject(PrimeNGConfig)
 
   ngOnInit(): void {
-    this.primeConfig.ripple = true    
+    this.primeConfig.ripple = true
   }
-
 }

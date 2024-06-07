@@ -1,10 +1,9 @@
-import { Component, OnInit, WritableSignal, inject, signal } from '@angular/core'
+import { Component, WritableSignal, inject, signal, OnInit } from '@angular/core'
 import { BadgeModule } from 'primeng/badge'
 import { SidebarModule } from 'primeng/sidebar'
 import { AvatarModule } from 'primeng/avatar'
 import { Notification } from '@fwks/models'
 import { NotificationApiService } from '@fwks/services'
-
 
 @Component({
   selector: 'fwks-navbar-notifications',
@@ -18,7 +17,6 @@ import { NotificationApiService } from '@fwks/services'
   styles: ''
 })
 export class NavbarNotificationsComponent implements OnInit {
-
   api = inject(NotificationApiService)
 
   isOpen = false

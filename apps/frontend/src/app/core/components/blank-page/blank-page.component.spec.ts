@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { NavbarSidebarComponent } from './navbar-sidebar.component'
+import { BlankPageComponent } from './blank-page.component'
 
-describe('NavbarSidebarComponent', () => {
-  let component: NavbarSidebarComponent
-  let fixture: ComponentFixture<NavbarSidebarComponent>
+describe('BlankPageComponent', () => {
+  let component: BlankPageComponent
+  let fixture: ComponentFixture<BlankPageComponent>
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NavbarSidebarComponent]
+      imports: [BlankPageComponent]
     })
     .compileComponents()
     
-    fixture = TestBed.createComponent(NavbarSidebarComponent)
+    fixture = TestBed.createComponent(BlankPageComponent)
     component = fixture.componentInstance
     fixture.detectChanges()
   })

@@ -28,6 +28,7 @@
     ],
     "paths": {
       "@fwks/components": ["src/app/core/components/index"],
+      "@fwks/types": ["src/app/core/types/types"],
       "@fwks/directives": ["src/app/core/directives/index"],
       "@fwks/functions": ["src/app/core/functions/index"],
       "@fwks/models": ["src/app/core/models/index"],

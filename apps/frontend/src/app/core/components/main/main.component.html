@@ -1,0 +1,15 @@
+<main class="flex pb-20 my-20 overflow-hidden h-dvh">
+
+    <nav class="hidden p-4 overflow-y-auto bg-white border-0 border-r-[3px] border-gray-300 border-solid w-60 main-sidenav  md:block" role="navigation">
+        <p-panelMenu [multiple]="true" [model]="settings.current.menus.navigation" styleClass="text-sm" />
+    </nav>
+
+    <section class="flex-grow p-4 overflow-y-auto">
+        <section class="mx-auto max-w-screen-2xl">
+            
+            <ng-content />
+
+        </section>
+    </section>
+
+</main>
