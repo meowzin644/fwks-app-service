@@ -1,1 +1,18 @@
-<p>blank-page works!</p>
+<div class="flex items-center justify-between p-4 mb-4 bg-white rounded-md shadow">
+
+    <section class="grid gap-1">
+        <h2 class="m-0">{{ title }}</h2>
+        @if(breadcrumbs.length > 0) {
+            <p-breadcrumb [model]="breadcrumbs" styleClass="p-0 border-none b breadcrumbs" />
+        }
+    </section>
+
+    <section class="flex gap-2">
+        <ng-content select="[template='actions']" />
+    </section>
+
+</div>
+
+<div class="p-6 bg-white rounded-md">
+    <ng-content />
+</div>
