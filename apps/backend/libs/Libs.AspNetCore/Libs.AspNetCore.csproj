@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <AssemblyName>Fwks.Libs.AspNetCore</AssemblyName>
+        <RootNamespace>Fwks.Libs.AspNetCore</RootNamespace>
+        <IsPackable>true</IsPackable>
+        <ImplicitUsings>disable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="8.1.0" />
+      <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+      <PackageReference Include="Serilog.AspNetCore" Version="8.0.1" />
+      <PackageReference Include="Serilog.Enrichers.Environment" Version="3.0.0" />
+      <PackageReference Include="Serilog.Sinks.Grafana.Loki" Version="8.3.0" />
+    </ItemGroup>
+
+</Project>

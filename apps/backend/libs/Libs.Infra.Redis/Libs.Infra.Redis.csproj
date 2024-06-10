@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <AssemblyName>Fwks.Libs.Infra.Redis</AssemblyName>
+        <RootNamespace>Fwks.Libs.Infra.Redis</RootNamespace>
+        <IsPackable>true</IsPackable>
+        <ImplicitUsings>disable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+</Project>

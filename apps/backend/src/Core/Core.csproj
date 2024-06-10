@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <AssemblyName>Fwks.Core</AssemblyName>
+        <RootNamespace>Fwks.Core</RootNamespace>
+        <ImplicitUsings>disable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Entities\Models\" />
+    <Folder Include="Entities\Enums\" />
+    <Folder Include="Abstractions\" />
+    <Folder Include="Responses\" />
+    <Folder Include="Requests\" />
+  </ItemGroup>
+
+</Project>

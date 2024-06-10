@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <AssemblyName>Fwks.Infra</AssemblyName>
+        <RootNamespace>Fwks.Infra</RootNamespace>
+        <ImplicitUsings>disable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Abstractions\" />
+    <Folder Include="Database\Mongo\Respositories\" />
+    <Folder Include="Database\Mongo\Mappers\" />
+    <Folder Include="Database\Postgres\Contexts\" />
+    <Folder Include="Database\Postgres\Configuration\" />
+    <Folder Include="Database\Postgres\Mappers\" />
+    <Folder Include="Database\Postgres\Migrations\" />
+    <Folder Include="Database\Postgres\Respositories\" />
+  </ItemGroup>
+
+</Project>

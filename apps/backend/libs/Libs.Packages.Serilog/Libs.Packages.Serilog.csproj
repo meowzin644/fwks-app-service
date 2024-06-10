@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <AssemblyName>Fwks.Libs.Packages.Serilog</AssemblyName>
+        <RootNamespace>Fwks.Libs.Packages.Serilog</RootNamespace>
+        <IsPackable>true</IsPackable>
+        <ImplicitUsings>disable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+</Project>
