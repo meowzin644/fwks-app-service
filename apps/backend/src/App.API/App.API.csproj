@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\libs\Libs.AspNetCore\Libs.AspNetCore.csproj" />
+    <ProjectReference Include="..\Core\Core.csproj" />
   </ItemGroup>
 
 </Project>

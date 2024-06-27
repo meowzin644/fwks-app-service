@@ -1,4 +1,5 @@
 using System;
+using Fwks.Core.Configuration;
 using Fwks.Libs.AspNetCore.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
@@ -33,5 +34,3 @@ finally
 
     await Log.CloseAndFlushAsync();
 }
-
-public record AppSettings();

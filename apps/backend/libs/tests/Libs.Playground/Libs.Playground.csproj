@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>disable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\..\..\..\smartrd\apps\backend\src\App.Api\App.Api.csproj" />
+      <ProjectReference Include="..\..\Libs.AspNetCore\Libs.AspNetCore.csproj" />
+      <ProjectReference Include="..\..\Libs.Core\Libs.Core.csproj" />
+    </ItemGroup>
+
+</Project>

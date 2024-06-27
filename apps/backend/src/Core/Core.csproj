@@ -11,6 +11,7 @@
   <ItemGroup>
     <Folder Include="Entities\Models\" />
     <Folder Include="Entities\Enums\" />
+    <Folder Include="Configuration\" />
     <Folder Include="Abstractions\" />
     <Folder Include="Responses\" />
     <Folder Include="Requests\" />
